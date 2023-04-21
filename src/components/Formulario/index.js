@@ -16,14 +16,20 @@ const Formulario = () => {
         'Inovação e Gestão'
     ]
 
-    const [nome, setNome] = useState('')
-    const [cargo, setCargo] = useState('')
-    const [imagem, setImagem] = useState('')
+    const [nome, setNome] = useState('');
+    const [cargo, setCargo] = useState('');
+    const [imagem, setImagem] = useState('');
+    const [time, setTime] = useState('');
 
-const aoSalvar = (evento) => {
-    evento.preventDefault() //Previnir o submit.
-    console.log("Form foi submetido =>", nome, cargo, imagem);
-}
+    const aoSalvar = (evento) => {
+        evento.preventDefault() //Previnir o submit.
+        props.aoColaboradorCadastrado({
+            nome,
+            cargo,
+            imagem,
+            time
+        })
+    }
 
     return (
         <section className="formulario">
@@ -47,7 +53,12 @@ const aoSalvar = (evento) => {
                 valor={imagem}
                 aoAlterado={valor => setImagem(valor)}
                 />
-            <ListaSuspensa obrigatorio={true} label="Time" itens={times}/>
+            <ListaSuspensa 
+                obrigatorio={true} 
+                label="Time" 
+                itens={times}
+                valor={time}
+                aoAlterado={valor => setTime(valor)}/>
             <Botao>
                 Criar Card
             </Botao>
