@@ -20,7 +20,7 @@ O projeto é um organograma, capaz de criar e organizar os times e a equipe do a
 <li> Clone o repositório atual</li>
 <li> Abra o terminal do Node</li>
 <li> Com o terminal aberto, pegue o caminho do repositório na sua máquina</li>
-<li> e execute o comando npm start "caminho"  </li>
+<li> e execute o comando ´´´npm start cd./´´´  </li>
 </ol>
 
 Seguindo os passos acima, você irá abrir o servidor local do projeto.
